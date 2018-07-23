@@ -1,0 +1,6 @@
+framework module Pods_iosStudy {
+  umbrella header "Pods-iosStudy-umbrella.h"
+
+  export *
+  module * { export * }
+}

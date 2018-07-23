@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--機能一覧-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="機能一覧" id="BYZ-38-t0r" customClass="ViewController" customModule="iosStudy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XbH-iI-s3E">
+                                <rect key="frame" x="156" y="38" width="62" height="30"/>
+                                <state key="normal" title="社員登録"/>
+                                <connections>
+                                    <segue destination="4ux-aX-tUI" kind="show" identifier="runRegistEmployee" id="WuW-KK-rER"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjj-4h-t9n">
+                                <rect key="frame" x="156" y="76" width="62" height="30"/>
+                                <state key="normal" title="勤怠登録"/>
+                                <connections>
+                                    <action selector="clickRegistAttendance:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v2L-eZ-I9P"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwC-ea-RaA">
+                                <rect key="frame" x="133" y="114" width="108" height="30"/>
+                                <state key="normal" title="社員出退勤状況"/>
+                                <connections>
+                                    <action selector="clickGetEmployee:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gRb-76-TR9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3B-lU-Rba">
+                                <rect key="frame" x="149" y="152" width="77" height="30"/>
+                                <state key="normal" title="出退勤一覧"/>
+                                <connections>
+                                    <action selector="clickUpdateEmployeeList:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wwk-Hx-e7E"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDg-dY-rGw">
+                                <rect key="frame" x="187.5" y="190" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nw7-7U-TnL">
+                                <rect key="frame" x="16" y="228" width="343" height="419"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="P6R-dZ-NmM">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P6R-dZ-NmM" id="NRa-iz-x2H">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Xe8-0F-IId" id="6eR-Jv-zeP"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nw7-7U-TnL" secondAttribute="bottom" constant="20" id="ICl-v7-Vb5"/>
+                            <constraint firstItem="fwC-ea-RaA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LtR-ct-7KK"/>
+                            <constraint firstItem="P3B-lU-Rba" firstAttribute="top" secondItem="fwC-ea-RaA" secondAttribute="bottom" constant="8" id="N6B-m9-aAt"/>
+                            <constraint firstItem="nw7-7U-TnL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="TMJ-aJ-B4F"/>
+                            <constraint firstItem="XDg-dY-rGw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="190" id="Voo-3T-Lpf"/>
+                            <constraint firstItem="xjj-4h-t9n" firstAttribute="top" secondItem="XbH-iI-s3E" secondAttribute="bottom" constant="8" id="aLe-2X-r8e"/>
+                            <constraint firstItem="XbH-iI-s3E" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="cjN-8C-MiN"/>
+                            <constraint firstItem="nw7-7U-TnL" firstAttribute="top" secondItem="P3B-lU-Rba" secondAttribute="bottom" constant="46" id="dBw-71-9r4"/>
+                            <constraint firstItem="XDg-dY-rGw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="daX-ob-f5D"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nw7-7U-TnL" secondAttribute="trailing" constant="16" id="fp1-OH-4kM"/>
+                            <constraint firstItem="xjj-4h-t9n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="g0d-OD-oog"/>
+                            <constraint firstItem="fwC-ea-RaA" firstAttribute="top" secondItem="xjj-4h-t9n" secondAttribute="bottom" constant="8" id="g6R-Z7-eko"/>
+                            <constraint firstItem="XbH-iI-s3E" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jpl-hD-5Oe"/>
+                            <constraint firstItem="nw7-7U-TnL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nV8-7b-4wh"/>
+                            <constraint firstItem="XDg-dY-rGw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vkM-J3-Cf3"/>
+                            <constraint firstItem="P3B-lU-Rba" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ynQ-Qt-JCz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="employeeData" destination="Xe8-0F-IId" id="ORJ-KW-E1D"/>
+                        <outlet property="loginName" destination="XDg-dY-rGw" id="BSp-mG-Mrd"/>
+                        <outlet property="tableView" destination="nw7-7U-TnL" id="H1f-nW-Spd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="Xe8-0F-IId" customClass="EmployeeData" customModule="iosStudy" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="669.60000000000002" y="31.934032983508249"/>
+        </scene>
+        <!--社員登録-->
+        <scene sceneID="5D0-F0-8bL">
+            <objects>
+                <viewController title="社員登録" id="4ux-aX-tUI" customClass="RegistEmployeeViewController" customModule="iosStudy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3cK-5G-Ndh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NPY-if-tNI">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="社員登録" id="0KK-o6-j12">
+                                        <barButtonItem key="leftBarButtonItem" title="もどる" style="plain" id="7FR-g3-o3A">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qnk-eZ-Sso">
+                                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="戻る"/>
+                                                <connections>
+                                                    <segue destination="sLr-1F-TBi" kind="unwind" unwindAction="backToTopWithSegue:" id="q71-MV-aIm"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="名前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Qo-oT-cm4">
+                                <rect key="frame" x="16" y="185" width="35" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="968-qk-fq7">
+                                <rect key="frame" x="59" y="180" width="300" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVu-ms-4Hg">
+                                <rect key="frame" x="172" y="218" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="登録"/>
+                                <connections>
+                                    <action selector="clickRegist:" destination="4ux-aX-tUI" eventType="touchUpInside" id="QZF-JZ-FN1"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ログイン中：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4k-eU-D0p">
+                                <rect key="frame" x="16" y="109" width="104" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="9sl-3D-zHY"/>
+                    </view>
+                    <connections>
+                        <outlet property="employeeName" destination="968-qk-fq7" id="eAC-5c-av9"/>
+                        <outlet property="loginName" destination="O4k-eU-D0p" id="TXu-Th-qxN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pUQ-Jh-HfV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="sLr-1F-TBi" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1457" y="-170"/>
+        </scene>
+    </scenes>
+</document>
